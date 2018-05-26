@@ -10,7 +10,7 @@ our $tm_wday  is export(:FIELDS);
 our $tm_yday  is export(:FIELDS);
 our $tm_isdst is export(:FIELDS);
 
-class Time::localtime:ver<0.0.1>:auth<cpan:ELIZABETH> {
+class Time::localtime:ver<0.0.2>:auth<cpan:ELIZABETH> {
     has Int $.sec;
     has Int $.min;
     has Int $.hour;
@@ -74,9 +74,10 @@ Time::localtime - Port of Perl 5's Time::localtime
 =head1 DESCRIPTION
 
 This module's default exports a C<localtime> and C<ctime> functions. The
-C<localtime> returns a "Time::tm" object.  This object has methods that
-return the similarly named structure field name from the C's tm structure
-from time.h; namely sec, min, hour, mday, mon, year, wday, yday, and isdst.
+C<localtime> function returns a "Time::localtime" object.  This object has
+methods that return the similarly named structure field name from the C's
+tm structure from time.h; namely sec, min, hour, mday, mon, year, wday, yday,
+and isdst.
 
 You may also import all the structure fields directly into your namespace as
 regular variables using the :FIELDS import tag. (Note that this still exports

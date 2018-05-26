@@ -19,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module's default exports a `localtime` and `ctime` functions. The `localtime` returns a "Time::tm" object. This object has methods that return the similarly named structure field name from the C's tm structure from time.h; namely sec, min, hour, mday, mon, year, wday, yday, and isdst.
+This module's default exports a `localtime` and `ctime` functions. The `localtime` function returns a "Time::localtime" object. This object has methods that return the similarly named structure field name from the C's tm structure from time.h; namely sec, min, hour, mday, mon, year, wday, yday, and isdst.
 
 You may also import all the structure fields directly into your namespace as regular variables using the :FIELDS import tag. (Note that this still exports the functions.) Access these fields as variables named with a preceding tm_. Thus, `$group_obj.year` corresponds to `$tm_year` if you import the fields.
 

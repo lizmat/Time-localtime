@@ -5,14 +5,14 @@ use Time::localtime;
 plan 20;
 
 sub ok-time($t, $what) {
-    ok 0 <= $t.sec   <=  59, "is $what second in range";
+    ok 0 <= $t.sec   <=  60, "is $what second in range";
     ok 0 <= $t.min   <=  59, "is $what minute in range";
     ok 0 <= $t.hour  <=  23, "is $what hour in range";
     ok 1 <= $t.mday  <=  31, "is $what day in month in range";
     ok 0 <= $t.mon   <=  11, "is $what month in range";
     ok 0 <= $t.year        , "is $what year in range";
     ok 0 <= $t.wday  <=   6, "is $what day in week in range";
-    ok 0 <= $t.yday  <= 366, "is $what day in year in range";
+    ok 1 <= $t.yday  <= 366, "is $what day in year in range";
     ok 0 <= $t.isdst <=   1, "is $what is daylight saving time in range";
 }
 
