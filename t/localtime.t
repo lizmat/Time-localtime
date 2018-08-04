@@ -20,7 +20,7 @@ ok-time localtime, 'localtime';
 ok-time localtime(1527362356), 'localtime(1527362356)';
 
 sub ok-ctime($t, $what) {
-    ok $t ~~ m/^ \w\w\w \s \w\w\w \s \d\d \s \d\d\:\d\d\:\d\d \s \d\d\d\d $/,
+    ok $t ~~ m/^ \w\w\w \s \w\w\w \s+ \d+ \s \d\d\:\d\d\:\d\d \s \d\d\d\d $/,
       "is $what string correctly formatted";
 }
 
