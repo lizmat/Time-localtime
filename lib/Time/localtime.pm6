@@ -10,7 +10,7 @@ our $tm_wday  is export(:FIELDS);
 our $tm_yday  is export(:FIELDS);
 our $tm_isdst is export(:FIELDS);
 
-class Time::localtime:ver<0.0.3>:auth<cpan:ELIZABETH> {
+class Time::localtime:ver<0.0.4>:auth<cpan:ELIZABETH> {
     has Int $.sec;
     has Int $.min;
     has Int $.hour;
@@ -59,7 +59,7 @@ my sub ctime(Int() $time = time) is export(:DEFAULT:FIELDS) {
 
 =head1 NAME
 
-Time::localtime - Port of Perl 5's Time::localtime
+Time::localtime - Port of Perl's Time::localtime
 
 =head1 SYNOPSIS
 
@@ -85,7 +85,7 @@ the functions.) Access these fields as variables named with a preceding tm_.
 Thus, C<$group_obj.year> corresponds to C<$tm_year> if you import the fields.
 
 The C<ctime> function provides a way of getting at the scalar sense of the
-C<localtime> function in Perl 5.
+C<localtime> function in Perl.
 
 =head1 AUTHOR
 
@@ -96,9 +96,9 @@ and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
