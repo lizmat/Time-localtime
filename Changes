@@ -2,6 +2,13 @@ Revision history for Time-localtime
 
 {{$NEXT}}
 
+0.0.5  2020-11-13T12:47:09+01:00
+    - Change name of distribution
+    - Force to highest possible Raku version
+    - Update copyright year
+    - Tighten up dependency on P5localtime
+    - Add PORTING CAVEATS section about needing POSIX semantics
+
 0.0.4  2019-11-10T20:12:34+01:00
     - Changed Perl 5 to Perl
 

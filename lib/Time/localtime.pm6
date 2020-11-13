@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 
 our $tm_sec   is export(:FIELDS);
 our $tm_min   is export(:FIELDS);
@@ -10,7 +10,7 @@ our $tm_wday  is export(:FIELDS);
 our $tm_yday  is export(:FIELDS);
 our $tm_isdst is export(:FIELDS);
 
-class Time::localtime:ver<0.0.4>:auth<cpan:ELIZABETH> {
+class Time::localtime:ver<0.0.5>:auth<cpan:ELIZABETH> {
     has Int $.sec;
     has Int $.min;
     has Int $.hour;
@@ -44,7 +44,8 @@ sub populate(@fields) {
 }
 
 my sub localtime(Int() $time = time) is export(:DEFAULT:FIELDS) {
-    use P5localtime; populate(localtime($time))
+    use P5localtime:ver<0.0.8>:auth<cpan:ELIZABETH>;
+    populate(localtime($time))
 }
 
 my sub ctime(Int() $time = time) is export(:DEFAULT:FIELDS) {
@@ -59,7 +60,7 @@ my sub ctime(Int() $time = time) is export(:DEFAULT:FIELDS) {
 
 =head1 NAME
 
-Time::localtime - Port of Perl's Time::localtime
+Raku port of Perl's Time::localtime module
 
 =head1 SYNOPSIS
 
@@ -72,6 +73,9 @@ Time::localtime - Port of Perl's Time::localtime
     $date_string = ctime($file.IO.modified);
 
 =head1 DESCRIPTION
+
+This module tries to mimic the behaviour of Perl's C<Time::gmtime> module
+as closely as possible in the Raku Programming Language.
 
 This module's default exports a C<localtime> and C<ctime> functions. The
 C<localtime> function returns a "Time::localtime" object.  This object has
@@ -87,6 +91,12 @@ Thus, C<$group_obj.year> corresponds to C<$tm_year> if you import the fields.
 The C<ctime> function provides a way of getting at the scalar sense of the
 C<localtime> function in Perl.
 
+=head1 PORTING CAVEATS
+
+This module depends on the availability of POSIX semantics.  This is
+generally not available on Windows, so this module will probably not work
+on Windows.
+
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
@@ -96,7 +106,7 @@ and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
@@ -104,4 +114,4 @@ This library is free software; you can redistribute it and/or modify it under th
 
 =end pod
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

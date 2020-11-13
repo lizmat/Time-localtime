@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use Time::localtime;
 
@@ -27,4 +27,4 @@ sub ok-ctime($t, $what) {
 ok-ctime ctime, 'localtime string';
 ok-ctime ctime(1527362356), 'localtime(1527362356) string';
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4
