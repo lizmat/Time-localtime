@@ -10,7 +10,7 @@ our $tm_wday  is export(:FIELDS);
 our $tm_yday  is export(:FIELDS);
 our $tm_isdst is export(:FIELDS);
 
-class Time::localtime:ver<0.0.5>:auth<cpan:ELIZABETH> {
+class Time::localtime:ver<0.0.6>:auth<zef:lizmat> {
     has Int $.sec;
     has Int $.min;
     has Int $.hour;
@@ -44,7 +44,7 @@ sub populate(@fields) {
 }
 
 my sub localtime(Int() $time = time) is export(:DEFAULT:FIELDS) {
-    use P5localtime:ver<0.0.8>:auth<cpan:ELIZABETH>;
+    use P5localtime:ver<0.0.9>:auth<zef:lizmat>;
     populate(localtime($time))
 }
 
@@ -99,14 +99,14 @@ on Windows.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Time-localtime . Comments
 and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

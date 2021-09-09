@@ -1,19 +1,19 @@
 {
-  "auth": "cpan:ELIZABETH",
+  "auth": "zef:lizmat",
   "authors": [
     "Elizabeth Mattijsen"
   ],
   "build-depends": [
   ],
   "depends": [
-    "P5localtime:ver<0.0.8>:auth<cpan:ELIZABETH>"
+    "P5localtime:ver<0.0.9>:auth<zef:lizmat>"
   ],
   "description": "Raku port of Perl's Time::localtime module",
   "license": "Artistic-2.0",
   "name": "Time::localtime",
   "perl": "6.c",
   "provides": {
-    "Time::localtime": "lib/Time/localtime.pm6"
+    "Time::localtime": "lib/Time/localtime.rakumod"
   },
   "resources": [
   ],
@@ -24,5 +24,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.5"
+  "version": "0.0.6"
 }
